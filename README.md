@@ -1,4 +1,4 @@
-# 📚 Legal Case Assistant – Agentic Legal Assistant  
+# Agentic Legal Assistant  
 
 An **AI-powered legal assistant** built with **Streamlit** that leverages **agentic reasoning** and **retrieval-augmented generation (RAG)** to answer legal queries. The system integrates **multiple domain-specific embeddings** and advanced **LLMs (Groq + Gemini 2.0 Flash)** to provide accurate, contextual, and explainable responses.  
 
