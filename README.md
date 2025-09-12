@@ -92,3 +92,6 @@ streamlit run app.py
 - Vector Store: Weaviate
 - Authentication: bcrypt
 - LLMs: Groq models & Gemini 2.0 Flash
+
+Live Demo :
+- HuggingFace Space : [Click Here](https://kodamkarthik281-ai-legal-case-assistant.hf.space)
