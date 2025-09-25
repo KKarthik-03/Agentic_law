@@ -94,12 +94,12 @@ COLLECTION_EMBED_MAP = {
 } 
 
 GROQ_MODELS = {
-    "llama-3.3-70b-versatile": "Llama 3.3 70B (Recommended)",
-    "llama-3.1-8b-instant": "Llama 3.1 8B (Fast)",
+    # "llama-3.3-70b-versatile": "Llama 3.3 70B (Recommended)",
+    # "llama-3.1-8b-instant": "Llama 3.1 8B (Fast)",
     "meta-llama/llama-4-maverick-17b-128e-instruct": "Meta Llama 17b (Balanced)",
     "gemma2-9b-it": "Gemma 2 9B (Efficient)",
-    "openai/gpt-oss-120b": "OpenAI 120B",
-    "openai/gpt-oss-20b": "OpenAI 20B"
+    # "openai/gpt-oss-120b": "OpenAI 120B",
+    # "openai/gpt-oss-20b": "OpenAI 20B"
 }
 
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
@@ -320,13 +320,13 @@ def create_smart_retrieval_function(retriever, show_metadata=False):
             for i, doc in enumerate(documents, 1):
                 metadata = doc.metadata
                 result = f"""
-Document {i}:
-Case Title: {metadata.get('case_title', 'N/A')}
-Court: {metadata.get('court', 'N/A')}
-File: {metadata.get('file_name', 'N/A')}
-Score: {metadata.get('score', 'N/A'):.3f}
-Content: {doc.page_content[:400]}{'...' if len(doc.page_content) > 400 else ''}
----"""
+                            Document {i}:
+                            Case Title: {metadata.get('case_title', 'N/A')}
+                            Court: {metadata.get('court', 'N/A')}
+                            File: {metadata.get('file_name', 'N/A')}
+                            Score: {metadata.get('score', 'N/A'):.3f}
+                            Content: {doc.page_content[:400]}{'...' if len(doc.page_content) > 400 else ''}
+                            ---"""
                 formatted_results.append(result)
                 
                 # Store metadata in session state for display
@@ -631,16 +631,7 @@ def show_main_app(db, weaviate_client):
                 # Show metadata if enabled and available
                 if show_metadata and "metadata" in message and message["metadata"]:
                     with st.expander("📊 Document Metadata"):
-                        # for i, meta in enumerate(message["metadata"], 1):
-                        #     st.json({
-                        #         f"Document {i}": {
-                        #             "Case Title": meta.get("case_title", "N/A"),
-                        #             "Court": meta.get("court", "N/A"),
-                        #             "File": meta.get("file_name", "N/A"),
-                        #             "Score": f"{meta.get('score', 0):.3f}",
-                        #             "Chunk Index": meta.get("chunk_index", 0)
-                        #         }
-                        #     })
+
                         for i, meta in enumerate(message["metadata"], 1):
                             # Ensure metadata is a dict
                             if isinstance(meta, str):
@@ -659,6 +650,7 @@ def show_main_app(db, weaviate_client):
                                 }
                             })
     
+
     # Chat input
     if query := st.chat_input("Ask me about legal documents and cases..."):
         # Add user message
@@ -737,6 +729,36 @@ def show_main_app(db, weaviate_client):
                         "content": error_msg,
                         "timestamp": datetime.datetime.now()
                     })
+
+# agentic_rag.py
+
+# def run_agent_query(agent, query: str, retriever=None, show_metadata=False):
+#     """
+#     Run a query through the agentic RAG system and return structured results.
+#     """
+#     try:
+#         # Run agent
+#         response = agent.invoke(query)
+#         final_answer = response["output"] if isinstance(response, dict) else str(response)
+
+#         retrieved_docs = []
+#         if retriever:
+#             docs = retriever.invoke(query)
+#             for d in docs:
+#                 retrieved_docs.append(d.page_content[:400])
+
+#         return {
+#             "query": query,
+#             "generated_answer": final_answer,
+#             "contexts": retrieved_docs,
+#         }
+
+#     except Exception as e:
+#         return {
+#             "query": query,
+#             "generated_answer": f"Error: {str(e)}",
+#             "contexts": [],
+#         }
 
 if __name__ == "__main__":
     main()

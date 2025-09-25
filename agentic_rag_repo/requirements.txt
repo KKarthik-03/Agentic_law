@@ -1,0 +1,23 @@
+# Core
+streamlit
+python-dotenv
+pymongo
+ragas
+datasets
+
+# LangChain ecosystem
+langchain-core
+langchain
+langchain-huggingface
+langchain-groq
+langchain-google-genai
+
+# Weaviate
+weaviate-client
+
+# Utilities
+pydantic
+bson
+torch
+transformers
+sentence-transformers
