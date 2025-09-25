@@ -34,7 +34,7 @@ The application is organized into modular components:
 ### 1. Clone and Install Dependencies
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/KKarthik-03/Agentic_law
 cd legal-rag-assistant
 pip install -r requirements.txt
 ```
@@ -131,24 +131,6 @@ The system integrates with:
 - User data isolation
 - Environment variable protection
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes following the modular structure
-4. Submit a pull request
-
-## License
-
-[Add your license information here]
-
-## Support
-
-For issues and questions:
-1. Check the configuration in `.env`
-2. Verify API key validity
-3. Ensure database connectivity
-4. Review Streamlit logs for errors
 
 ## Troubleshooting
 
@@ -168,8 +150,3 @@ For issues and questions:
 - Verify all API keys in `.env`
 - Check key validity and quotas
 - Ensure proper permissions
-
-**Import Errors**
-- Run `pip install -r requirements.txt`
-- Check Python version compatibility
-- Verify virtual environment activation
