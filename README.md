@@ -95,3 +95,30 @@ streamlit run app.py
 
 Live Demo :
 - HuggingFace Space : [Click Here](https://kodamkarthik281-ai-legal-case-assistant.hf.space)
+
+### Demo Queries :
+```
+query1 = "What was the Supreme Court of Canada's decision in the case concerning Fisheries Jurisdiction between Spain and Canada?"
+query2 = "Sorry my mistake ,On what basis did the ICJ decline jurisdiction in that case?"
+
+query3 = "Describe the key legal principles established in the UN Committee Against Torture case against Canada."
+query4 = "What were the committee's views on the complaints it considered?"
+
+query5 = "What was the main outcome of the ICJ's advisory opinion on the legality of using nuclear weapons?"
+query6 = "What legal reasoning did the court use to reach its conclusion?"
+```
+### Case Related Queries :
+1. ICJ advisory opinion on the use of nuclear weapons :
+  - What were the key principles of international humanitarian law that the Court referenced in its reasoning from case ICJ advisory opinion on the use of nuclear weapons
+  - Can you explain why the Court was unable to conclude definitively on the legality of nuclear weapons in an "extreme circumstance of self-defense"?
+  - What was the Court's stance on the obligation of states to pursue nuclear disarmament negotiations?
+
+2. UN Committee Against Torture Canada case :
+  - What were the specific allegations made against Canada in the case of UN Committee Against Torture Canada case
+  - Did the Committee against Torture find that Canada had violated its international obligations?
+  - What was the impact of the Committee's views on the Canadian government's subsequent actions?
+
+3. Fisheries Jurisdiction case (Spain v. Canada) :
+  - What was the legal basis Spain used to bring the case to the ICJ? Fisheries Jurisdiction case (Spain v. Canada)
+  - Can you explain Canada's argument and the key reservation it invoked to challenge the Court's jurisdiction? 
+  - How did the Court's final decision affect the ability of coastal states to enforce their fisheries regulations on the high seas?
